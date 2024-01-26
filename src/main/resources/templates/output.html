@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title>Tutorial of Thymeleaf</title>
+    <title th:text="#{head.title}"></title>
 </head>
 <body>
-    <h1>Thymeleaf課題 </h1>
-    <h2>出力画面</h2>
-    <p th:text="'入力された値は「' + ${id} + '」です。'"></p>
-    <p><a th:href="@{/input(aid=${id})}">入力画面へ戻る</a></p>
+    <h1 th:text="#{content.title}"></h1>
+    <h2 th:text="#{output.title}"></h2>
+    <p th:text="#{content.output.outmsg1} + ${id} + #{content.output.outmsg2}"></p>
+    <p><a th:href="@{/input(previous=${id})}" th:text="#{return.link}"></a></p>
 </body>
 </html>
