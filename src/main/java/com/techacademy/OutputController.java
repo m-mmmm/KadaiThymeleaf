@@ -10,9 +10,9 @@ import org.springframework.ui.Model;
 public class OutputController {
 
     @PostMapping("/output")
-    public String getOutput(@RequestParam("val") String val, Model model) {
+    public String postOutput(@RequestParam("val") String val, Model model) {
         model.addAttribute("id",val);
-        // getOutput.htmlに入力画面から入力値を受け取って、出力画面を表示する
+        // postOutput.htmlに入力画面から入力値を受け取って、出力画面を表示する
         return "output";
     }
 }
